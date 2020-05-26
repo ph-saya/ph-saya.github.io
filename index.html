@@ -142,11 +142,14 @@
                 for (var colIndex in categories_quiz) {
                     var topic = categories_quiz[colIndex]
                     var topic_human_readable = categories_quiz_human_readable[colIndex]
+                    
                     html += '<div class="sliderContainer"><span>'
                     html += topic_human_readable
                     html += ': </span><span id="'
                     html += topic
-                    html += '-value"></span><input oninput=updateSliderValue("' 
+                    html += '-value"></span><img src="assets/foods/'
+                    html += topic
+                    html += '.jpg" class="sliderImage"><input oninput=updateSliderValue("'
                     html += topic
                     html += '-slider","' 
                     html += topic

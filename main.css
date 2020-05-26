@@ -38,6 +38,10 @@ button {
     margin: 30px 0;
 }
 
+.sliderImage{
+    width: 300px;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
