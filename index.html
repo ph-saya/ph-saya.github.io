@@ -12,12 +12,13 @@
 
         <!-- Personal scripts -->
         <script type="text/javascript">
-            const categories = ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"];
-            const categories_quiz = ["glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"];
+            const categories = ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonnaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"];
+            const categories_quiz = ["glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonnaise"];
+            const categories_quiz_human_readable = ["A glass of milk","Black licorice","A green bell pepper","White chocolate","A glass of orange juice with pulp","Sumac","Nuts in brownies","Pineapple on a pizza","Raisins","Mayonnaise"];
 
             // Build table data
             const data = [
-                ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"],
+                ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonnaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"],
                 ["chris",15,65,25,30,80,70,80,90,82,90,62.7,90,82],
                 ["brad",62,70.75,95,41,70,71,66,83,73,71,70.275,83,73],
                 ["christina",37,1,28,90,97,85,98,92,78,100,70.6,92,78],
@@ -34,7 +35,7 @@
             ];
 
             const data_quiz = [
-                ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"],
+                ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonnaise"],
                 ["chris",15,65,25,30,80,70,80,90,82,90,],
                 ["brad",62,70.75,95,41,70,71,66,83,73,71,],
                 ["christina",37,1,28,90,97,85,98,92,78,100,],
@@ -53,6 +54,7 @@
             // Initialize data structures
             let names = new Map();
             let foods = new Map();
+            let humanReadableFoods = new Map();
             let foodsReverse = new Map();
             let difference_from_chef = new Map();
             let columnScores = new Map();
@@ -67,6 +69,7 @@
             for ( var colIndex in categories_quiz ) {
                 foods.set(colIndex, categories_quiz[colIndex])
                 foodsReverse.set(categories_quiz[colIndex], colIndex)
+                humanReadableFoods.set(categories_quiz[colIndex], categories_quiz_human_readable[colIndex])
                 columnScores.set(colIndex, 100)
             }
 
