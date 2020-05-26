@@ -143,23 +143,14 @@
                     var topic = categories_quiz[colIndex]
                     var topic_human_readable = categories_quiz_human_readable[colIndex]
 
-                    html += '<div class="sliderContainer"><span>'
-                    html += topic_human_readable
-                    html += ': </span><span id="'
-                    html += topic
-                    html += '-value"></span><img src="assets/foods/'
-                    html += topic
-                    html += '.jpg" class="sliderImage"><input oninput=updateSliderValue("'
-                    html += topic
-                    html += '-slider","' 
-                    html += topic
-                    html += '-value") onload=updateSliderValue("' 
-                    html += topic
-                    html += '-slider","' 
-                    html += topic
-                    html += '-value") type="range" min="1" max="100" value="100" id="'
-                    html += topic
-                    html += '-slider" class="slider"\></div>'
+                    html += '<div class="sliderContainer">'
+                    html += '<span>' + topic_human_readable + ': </span>'
+                    html += '<span id="' + topic + '-value"></span>'
+                    html += '<img src="assets/foods/' + topic + '.jpg" class="sliderImage">'
+                    html += '<input oninput=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
+                    html += ' onload=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
+                    html += ' type="range" min="1" max="100" value="100" id="' + topic + '-slider"'
+                    html += 'class="slider"\></div>'
                 }
                 html += '</div>'
                 return html;
