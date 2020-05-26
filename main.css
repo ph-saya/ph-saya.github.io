@@ -9,17 +9,24 @@ h1 {
     padding: 0;
     font-size: 30px;
 }
-
-#quizStartButton {
+/*#quizStartButton*/
+button {
     font-family: 'Merriweather', serif;
     background-color: #000;
     color: #fff;
     border: none;
     padding: 15px 32px;
+    margin: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+#showDataButton {
+    background-color: #fff;
+    color: blue;
+    text-decoration: underline;
 }
 
 .sliderscontainer {
@@ -27,7 +34,7 @@ h1 {
 }
 
 .sliderContainer {
-       margin-top:20px;
+    margin: 20px 0;
 }
 
 .slider {
