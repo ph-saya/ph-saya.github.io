@@ -29,12 +29,13 @@ button {
     text-decoration: underline;
 }
 
-.sliderscontainer {
-    width: 100%;
+#sliders {
+    width: 80%;
+    padding: 0 10%;
 }
 
 .sliderContainer {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .slider {
@@ -55,15 +56,15 @@ button {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
+    width: 28px;
+    height: 28px;
+    background: #000;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     background: #4CAF50;
     cursor: pointer;
 }
