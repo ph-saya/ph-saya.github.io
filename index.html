@@ -2,318 +2,318 @@
 
 <!-- BEGIN -->
 <html>
-	<head>
-		<title>Which BA test kitchen chef likes the same tastes as you</title>
-		<!-- Styling css -->
+    <head>
+        <title>Which BA test kitchen chef likes the same tastes as you</title>
+        <!-- Styling css -->
         <link rel="stylesheet" href="main.css">
-        
+
         <!--  Fonts: Import Merriweather and Roboto     -->
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        
-		<!-- Personal scripts -->
-		<script type="text/javascript">
-			const categories = ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"];
-			const categories_quiz = ["glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"];
 
-			// Build table data
-			const data = [
+        <!-- Personal scripts -->
+        <script type="text/javascript">
+            const categories = ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"];
+            const categories_quiz = ["glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"];
+
+            // Build table data
+            const data = [
                 ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise","average_recorded","pineapple_on_pizza_spoken","raisin_spoken"],
-				["chris",15,65,25,30,80,70,80,90,82,90,62.7,90,82],
-				["brad",62,70.75,95,41,70,71,66,83,73,71,70.275,83,73],
-				["christina",37,1,28,90,97,85,98,92,78,100,70.6,92,78],
-				["sohla",90,40,15,86,97,95,96,95,65,100,77.9,95,65],
-				["felix",100,100,100,100,100,100,100,100,100,100,100,100,100],
-				["alex",50,75,2,4,97,29,10,7,20,100,39.4,70,],
-				["gaby",50,50,95,30,72,85,75,80,100,90,72.7,80,100],
-				["rick",23,65,57,83,100,85,15,10,64,96,59.8,10,],
-				["claire",90,40,0,50,85,75,10,20,4,100,47.4,,4],
-				["molly",15,10,0,30,80,87,30,5,70,90,41.7,5,70],
-				["carla",15,90,4,1,83,50,5,3,80,90,42.1,3,80],
-				["andy",20,55,0,20,65,70,70,85,85,,52.22222222,85,85],
-				["amiel",8,65,50,75,90,85,50,12,55,96,58.6,12,],
-			];
+                ["chris",15,65,25,30,80,70,80,90,82,90,62.7,90,82],
+                ["brad",62,70.75,95,41,70,71,66,83,73,71,70.275,83,73],
+                ["christina",37,1,28,90,97,85,98,92,78,100,70.6,92,78],
+                ["sohla",90,40,15,86,97,95,96,95,65,100,77.9,95,65],
+                ["felix",100,100,100,100,100,100,100,100,100,100,100,100,100],
+                ["alex",50,75,2,4,97,29,10,7,20,100,39.4,70,],
+                ["gaby",50,50,95,30,72,85,75,80,100,90,72.7,80,100],
+                ["rick",23,65,57,83,100,85,15,10,64,96,59.8,10,],
+                ["claire",90,40,0,50,85,75,10,20,4,100,47.4,,4],
+                ["molly",15,10,0,30,80,87,30,5,70,90,41.7,5,70],
+                ["carla",15,90,4,1,83,50,5,3,80,90,42.1,3,80],
+                ["andy",20,55,0,20,65,70,70,85,85,,52.22222222,85,85],
+                ["amiel",8,65,50,75,90,85,50,12,55,96,58.6,12,],
+            ];
 
-			const data_quiz = [
-				["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"],
-				["chris",15,65,25,30,80,70,80,90,82,90,],
-				["brad",62,70.75,95,41,70,71,66,83,73,71,],
-				["christina",37,1,28,90,97,85,98,92,78,100,],
-				["sohla",90,40,15,86,97,95,96,95,65,100,],
-				["felix",100,100,100,100,100,100,100,100,100,100,],
-				["alex",50,75,2,4,97,29,10,7,20,],
-				["gaby",50,50,95,30,72,85,75,80,100,90,],
-				["rick",23,65,57,83,100,85,15,10,64,96,],
-				["claire",90,40,0,50,85,75,10,20,4,100,],
-				["molly",15,10,0,30,80,87,30,5,70,90,],
-				["carla",15,90,4,1,83,50,5,3,80,90,],
-				["andy",20,55,0,20,65,70,70,85,85,,],
-				["amiel",8,65,50,75,90,85,50,12,55,96,],
-			];	
+            const data_quiz = [
+                ["name","glass_of_milk","black_licorice","green_bell_pepper","white_chocolate","orange_juice_with_pulp","sumac","nuts_in_brownies","pineapple_on_pizza_recorded","raisin_recorded","mayonaise"],
+                ["chris",15,65,25,30,80,70,80,90,82,90,],
+                ["brad",62,70.75,95,41,70,71,66,83,73,71,],
+                ["christina",37,1,28,90,97,85,98,92,78,100,],
+                ["sohla",90,40,15,86,97,95,96,95,65,100,],
+                ["felix",100,100,100,100,100,100,100,100,100,100,],
+                ["alex",50,75,2,4,97,29,10,7,20,],
+                ["gaby",50,50,95,30,72,85,75,80,100,90,],
+                ["rick",23,65,57,83,100,85,15,10,64,96,],
+                ["claire",90,40,0,50,85,75,10,20,4,100,],
+                ["molly",15,10,0,30,80,87,30,5,70,90,],
+                ["carla",15,90,4,1,83,50,5,3,80,90,],
+                ["andy",20,55,0,20,65,70,70,85,85,,],
+                ["amiel",8,65,50,75,90,85,50,12,55,96,],
+            ];	
 
-			// Initialize data structures
-			let names = new Map();
-			let foods = new Map();
-			let foodsReverse = new Map();
-			let difference_from_chef = new Map();
-			let columnScores = new Map();
+            // Initialize data structures
+            let names = new Map();
+            let foods = new Map();
+            let foodsReverse = new Map();
+            let difference_from_chef = new Map();
+            let columnScores = new Map();
 
-			for ( var rowIndex in data_quiz ) {
-				if ( rowIndex != 0 ) {
-					names.set(rowIndex, data_quiz[rowIndex][0])
-					difference_from_chef.set(rowIndex, 0)
-				}
-			}
+            for ( var rowIndex in data_quiz ) {
+                if ( rowIndex != 0 ) {
+                    names.set(rowIndex, data_quiz[rowIndex][0])
+                    difference_from_chef.set(rowIndex, 0)
+                }
+            }
 
-			for ( var colIndex in categories_quiz ) {
-				foods.set(colIndex, categories_quiz[colIndex])
-				foodsReverse.set(categories_quiz[colIndex], colIndex)
-				columnScores.set(colIndex, 100)
-			}
+            for ( var colIndex in categories_quiz ) {
+                foods.set(colIndex, categories_quiz[colIndex])
+                foodsReverse.set(categories_quiz[colIndex], colIndex)
+                columnScores.set(colIndex, 100)
+            }
 
-			// Written by https://www.caveofprogramming.com/javascript-tutorial/javascript-html-generating-html-and-embedding-javascript-in-html.html
-			function createTable(data) {
-				var html = "";
-				html += '<table class="data">';
-				for (var rowIndex in data) {
-					var rowData = data[rowIndex];
-					if (rowIndex == 0) {
-						html += '<tr style="font-weight: bold;">';
-					}
-					else {
-						html += "<tr>";
-					}
-					// Input all of the data
-					for (var colIndex in rowData) {
-						var colData = rowData[colIndex];
-						html += "<td>";
-						html += colData;
-						html += "</td>";
-					}
-					html += "</tr>";
-				}
-				html += "</table>";
-				return html;
-			}
+            // Written by https://www.caveofprogramming.com/javascript-tutorial/javascript-html-generating-html-and-embedding-javascript-in-html.html
+            function createTable(data) {
+                var html = "";
+                html += '<table class="data">';
+                for (var rowIndex in data) {
+                    var rowData = data[rowIndex];
+                    if (rowIndex == 0) {
+                        html += '<tr style="font-weight: bold;">';
+                    }
+                    else {
+                        html += "<tr>";
+                    }
+                    // Input all of the data
+                    for (var colIndex in rowData) {
+                        var colData = rowData[colIndex];
+                        html += "<td>";
+                        html += colData;
+                        html += "</td>";
+                    }
+                    html += "</tr>";
+                }
+                html += "</table>";
+                return html;
+            }
 
-			// This function takes the formatted HTML
-			// and inserts it into the document as
-			// "child" HTML of the specified element.
-			function insertHTMLTable(id, html) {
-				console.log("Inputs:")
-				console.log(id, html)
-				var element = document.getElementById(id);
-				if(!element) {
-					console.log("Element with id " + id + " not found.");
-				}
-				html += createTable(data)
-				console.log(element)
-				console.log("HTML to be replaced: " + element.innerHTML)
-				element.innerHTML = html;
-			}
+            // This function takes the formatted HTML
+            // and inserts it into the document as
+            // "child" HTML of the specified element.
+            function insertHTMLTable(id, html) {
+                console.log("Inputs:")
+                console.log(id, html)
+                var element = document.getElementById(id);
+                if(!element) {
+                    console.log("Element with id " + id + " not found.");
+                }
+                html += createTable(data)
+                console.log(element)
+                console.log("HTML to be replaced: " + element.innerHTML)
+                element.innerHTML = html;
+            }
 
-			function generateTables() {
-				stringName = "tabledata"
-				console.log(document.getElementById(stringName));
-				html = "";
-				insertHTMLTable(stringName, html);
-				button = document.getElementById("showDataButton");
-				button.parentNode.removeChild(button)
-			}
+            function generateTables() {
+                stringName = "tabledata"
+                console.log(document.getElementById(stringName));
+                html = "";
+                insertHTMLTable(stringName, html);
+                button = document.getElementById("showDataButton");
+                button.parentNode.removeChild(button)
+            }
 
-			function updateSliderValue(element_id, value_id) {
-				var slider = document.getElementById(element_id);
-				var output = document.getElementById(value_id);
-				// Update the slider value each time one changes it
-				output.innerHTML = slider.value;
-				// Determine the slider one is altering
-				// cuts of the "-slider"
-				// 7 is a magic number representing the length of "-slider"
-				name = element_id.substring(0, element_id.length - 7);
-				foodIndex = foodsReverse.get(name)
-				columnScores.set(foodIndex, parseInt(slider.value, 10))
-			}
+            function updateSliderValue(element_id, value_id) {
+                var slider = document.getElementById(element_id);
+                var output = document.getElementById(value_id);
+                // Update the slider value each time one changes it
+                output.innerHTML = slider.value;
+                // Determine the slider one is altering
+                // cuts of the "-slider"
+                // 7 is a magic number representing the length of "-slider"
+                name = element_id.substring(0, element_id.length - 7);
+                foodIndex = foodsReverse.get(name)
+                columnScores.set(foodIndex, parseInt(slider.value, 10))
+            }
 
-			function createSliders(categories_quiz) {
-				var html = '';
-				html += '<div class="slidersContainer">'
-				for (var colIndex in categories_quiz) {
-					var topic = categories_quiz[colIndex]
-					html += '<div><input oninput=updateSliderValue("' 
-					html += topic
-					html += '-slider","' 
-					html += topic
-					html += '-value") onload=updateSliderValue("' 
-					html += topic
-					html += '-slider","' 
-					html += topic
-					html += '-value") type="range" min="1" max="100" value="100" id="'
-					html += topic
-					html += '-slider"\><span>'
-					html += topic
-					html += ': </span><span id="'
-					html += topic
-					html += '-value"></span></div>'
-				}
-				html += '</div>'
-				return html;
-			}
+            function createSliders(categories_quiz) {
+                var html = '';
+                html += '<div>'
+                for (var colIndex in categories_quiz) {
+                    var topic = categories_quiz[colIndex]
+                    html += '<div><class="sliderContainer"><span>'
+                    html += topic
+                    html += ': </span><span id="'
+                    html += topic
+                    html += '-value"></span><input oninput=updateSliderValue("' 
+                    html += topic
+                    html += '-slider","' 
+                    html += topic
+                    html += '-value") onload=updateSliderValue("' 
+                    html += topic
+                    html += '-slider","' 
+                    html += topic
+                    html += '-value") type="range" min="1" max="100" value="100" id="'
+                    html += topic
+                    html += '-slider" class="slider"\></div>'
+                }
+                html += '</div>'
+                return html;
+            }
 
-			function insertHTMLSliders(id, html) {
-				var element = document.getElementById(id);
-				if(!element) {
-					console.log("Element with id " + id + " not found.");
-				}
-				html += createSliders(categories_quiz)
-				element.innerHTML = html;
-			}
+            function insertHTMLSliders(id, html) {
+                var element = document.getElementById(id);
+                if(!element) {
+                    console.log("Element with id " + id + " not found.");
+                }
+                html += createSliders(categories_quiz)
+                element.innerHTML = html;
+            }
 
-			function insertHTMLButton(id, html) {
-				var element = document.getElementById(id);
-				if(!element) {
-					console.log("Element with id " + id + " not found.");
-				}
-				html += "<button onClick=generateResults() id='quizEndButton'>Results</button>"
-				element.innerHTML = html;
-			}
+            function insertHTMLButton(id, html) {
+                var element = document.getElementById(id);
+                if(!element) {
+                    console.log("Element with id " + id + " not found.");
+                }
+                html += "<button onClick=generateResults() id='quizEndButton'>Results</button>"
+                element.innerHTML = html;
+            }
 
-			function generateSliders() {
-				stringName = "sliders"
-				html = "";
-				insertHTMLSliders(stringName, html);
-				button = document.getElementById("quizStartButton");
-				button.parentNode.removeChild(button);
-				insertHTMLButton("resultsButtonContainer", "");
-			}
+            function generateSliders() {
+                stringName = "sliders"
+                html = "";
+                insertHTMLSliders(stringName, html);
+                button = document.getElementById("quizStartButton");
+                button.parentNode.removeChild(button);
+                insertHTMLButton("resultsButtonContainer", "");
+            }
 
-			function calculateDifference(value, key, map) {
-				rowIndex = key
-				output = 0
-				var columnIndex;
-				for ( columnIndex = 1; columnIndex < foods.size+1; columnIndex++) {
-					chef_answer = data_quiz[rowIndex][columnIndex]
-					user_answer = columnScores.get(String(columnIndex-1))
-					difference = Math.abs(chef_answer - user_answer)
-					output += difference
-				}
-				similarity_measure = output
-				difference_from_chef.set(key, similarity_measure);
-			}
+            function calculateDifference(value, key, map) {
+                rowIndex = key
+                output = 0
+                var columnIndex;
+                for ( columnIndex = 1; columnIndex < foods.size+1; columnIndex++) {
+                    chef_answer = data_quiz[rowIndex][columnIndex]
+                    user_answer = columnScores.get(String(columnIndex-1))
+                    difference = Math.abs(chef_answer - user_answer)
+                    output += difference
+                }
+                similarity_measure = output
+                difference_from_chef.set(key, similarity_measure);
+            }
 
-		    function evaluateScores() {
-				names.forEach(calculateDifference);
-				var similarity = []
-				best_score_so_far = (foods.size - 1) * 99
-				chef_so_far = "Felix" // Remove
-				for ( var rowIndex = 1; rowIndex < difference_from_chef.size+1; rowIndex++ ) {
-					current_chef_value = difference_from_chef.get(String(rowIndex))
-					if ( best_score_so_far >= current_chef_value ) {
-						chef_so_far = names.get(String(rowIndex))
-						best_score_so_far = current_chef_value
-					}
-				}
-				return chef_so_far
-		    }
+            function evaluateScores() {
+                names.forEach(calculateDifference);
+                var similarity = []
+                best_score_so_far = (foods.size - 1) * 99
+                chef_so_far = "Felix" // Remove
+                for ( var rowIndex = 1; rowIndex < difference_from_chef.size+1; rowIndex++ ) {
+                    current_chef_value = difference_from_chef.get(String(rowIndex))
+                    if ( best_score_so_far >= current_chef_value ) {
+                        chef_so_far = names.get(String(rowIndex))
+                        best_score_so_far = current_chef_value
+                    }
+                }
+                return chef_so_far
+            }
 
-		    function createResults() {
-				html = ""
-				html += "<p>You are such a "
-				chef_name = evaluateScores()
-				html += chef_name.toUpperCase()
-				html += "!</p>"
-				return html
-		    }
+            function createResults() {
+                html = ""
+                html += "<p>You are such a "
+                chef_name = evaluateScores()
+                html += chef_name.toUpperCase()
+                html += "!</p>"
+                return html
+            }
 
-			function insertHTMLResults(stringName, html) {
-				var element = document.getElementById(stringName);
-				if(!element) {
-					console.log("Element with id " + stringName + " not found.");
-				}
-				html += createResults();
-				element.innerHTML = html;
-			}
+            function insertHTMLResults(stringName, html) {
+                var element = document.getElementById(stringName);
+                if(!element) {
+                    console.log("Element with id " + stringName + " not found.");
+                }
+                html += createResults();
+                element.innerHTML = html;
+            }
 
-			function insertHTMLImage() {
-				stringName = "imageContainer"
-				var element = document.getElementById(stringName)
-				if(!element) {
-					console.log("Element with id " + stringName + " not found.");
-				}
-				chef_name = evaluateScores()
-				html = ""
-				html += "<img src='assets/"
-				html += chef_name
-				if ( chef_name == 'felix' ) {
-					html += ".png' alt='"
-				}
-				else {
-					html += ".jpeg' alt='"
-				}
-				html += chef_name
-				html += "'>"
-				element.innerHTML = html;
-			}
+            function insertHTMLImage() {
+                stringName = "imageContainer"
+                var element = document.getElementById(stringName)
+                if(!element) {
+                    console.log("Element with id " + stringName + " not found.");
+                }
+                chef_name = evaluateScores()
+                html = ""
+                html += "<img src='assets/"
+                html += chef_name
+                if ( chef_name == 'felix' ) {
+                    html += ".png' alt='"
+                }
+                else {
+                    html += ".jpeg' alt='"
+                }
+                html += chef_name
+                html += "'>"
+                element.innerHTML = html;
+            }
 
-			function generateResults() {
-				stringName = "results"
-				html = "";
-				insertHTMLResults(stringName, html);
-				insertHTMLImage()
-			}
+            function generateResults() {
+                stringName = "results"
+                html = "";
+                insertHTMLResults(stringName, html);
+                insertHTMLImage()
+            }
 
-			function welcomeBanner() {
-				message = "Which Bon Appétit Test Kitchen likes the same taste as you do?"
-				console.log(message)
-			}
+            function welcomeBanner() {
+                message = "Which Bon Appétit Test Kitchen likes the same taste as you do?"
+                console.log(message)
+            }
 
-			now = Date()
-			console.log(now)
-			window.onload = welcomeBanner();
-		</script>
+            now = Date()
+            console.log(now)
+            window.onload = welcomeBanner();
+        </script>
 
-	</head>
+    </head>
 
-	<body>
-		<div>
-			<h1>Which Bon Appetit Test Kitchen Chef do you have the same likes as?</h1>
-			<p>
-				<a href="https://www.youtube.com/watch?v=_ykjy61GwcE">
-					source material
-				</a>
-			</p>
-			<h2>How much do you like the following foods?</h2>
-		</div>
+    <body>
+        <div>
+            <h1>Which Bon Appetit Test Kitchen Chef do you have the same likes as?</h1>
+            <p>
+                <a href="https://www.youtube.com/watch?v=_ykjy61GwcE">
+                    source material
+                </a>
+            </p>
+            <h2>How much do you like the following foods?</h2>
+        </div>
 
-		<button onClick=generateSliders() id="quizStartButton">Start</button>
-		<div id="sliders">
-		</div>
+        <button onClick=generateSliders() id="quizStartButton">Start</button>
+        <div id="sliders">
+        </div>
 
-		<div id="resultsButtonContainer"></div>
-		<div id="results"></div>
-		<div id="imageContainer"></div>
+        <div id="resultsButtonContainer"></div>
+        <div id="results"></div>
+        <div id="imageContainer"></div>
 
-		<button onClick=generateTables() id="showDataButton">Data</button>
-		<div id="tabledata">
-		</div>
+        <button onClick=generateTables() id="showDataButton">Data</button>
+        <div id="tabledata">
+        </div>
 
-		<div>
-			<p>
-				The quiz is made with respect for all rights reserved to the people and parties they represent.
-				If parties have a disagreement, please reach out and the disagreeable content will be removed.
-				Images were sourced from DuckDuckGo image search and are used until a relevant party takes issue.
-				Opinions are my own and do not represent that of my employer or any others with whom I am associated.
-			</p>
-		</div>
-		<div>
-			<a href="https://www.bonappetit.com/">
-				Bon Appétit Home
-			</a>
-		</div>
-		<div>
-			<a href="https://www.youtube.com/user/BonAppetitDotCom">
-				Bon Appétit Channel
-			</a>
-		</div>
-	</body>
+        <div>
+            <p>
+                The quiz is made with respect for all rights reserved to the people and parties they represent.
+                If parties have a disagreement, please reach out and the disagreeable content will be removed.
+                Images were sourced from DuckDuckGo image search and are used until a relevant party takes issue.
+                Opinions are my own and do not represent that of my employer or any others with whom I am associated.
+            </p>
+        </div>
+        <div>
+            <a href="https://www.bonappetit.com/">
+                Bon Appétit Home
+            </a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/user/BonAppetitDotCom">
+                Bon Appétit Channel
+            </a>
+        </div>
+    </body>
 
 </html>
 
