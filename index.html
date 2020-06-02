@@ -136,21 +136,16 @@
             // and inserts it into the document as
             // "child" HTML of the specified element.
             function insertHTMLTable(id, html) {
-                console.log("Inputs:")
-                console.log(id, html)
                 var element = document.getElementById(id);
                 if(!element) {
                     console.log("Element with id " + id + " not found.");
                 }
                 html += createTable(data)
-                console.log(element)
-                console.log("HTML to be replaced: " + element.innerHTML)
                 element.innerHTML = html;
             }
 
             function generateTables() {
                 stringName = "tabledata"
-                console.log(document.getElementById(stringName));
                 html = "";
                 insertHTMLTable(stringName, html);
                 button = document.getElementById("showDataButton");
@@ -281,7 +276,6 @@
                 }
                 if (!chef_name) {
                     chef_name = evaluateScores()
-                    console.log(chef_name)
                 }
                 html = ""
                 html += "<img src='assets/people/"
