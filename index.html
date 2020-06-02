@@ -74,6 +74,10 @@
                 columnScores.set(colIndex, 100)
             }
 
+            function capitalize(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1)
+            }
+
             // Written by https://www.caveofprogramming.com/javascript-tutorial/javascript-html-generating-html-and-embedding-javascript-in-html.html
             function createTable(data) {
                 var html = "";
