@@ -108,7 +108,7 @@
                 html += '<table class="images">';
                 for (var rowIndex in data) {
                     html += "<tr>"
-                    if (rowIndex === 0) { continue; }
+                    if (rowIndex == 0) { continue; }
                     // The 0th element is the name of the chef
                     chef_name = data[rowIndex][0]
                     html += "<td>";
