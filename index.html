@@ -191,9 +191,11 @@
                     var topic_human_readable = categories_quiz_human_readable[colIndex]
 
                     html += '<div class="sliderContainer">'
+                    html += '<div class="sliderImageContainer">'
+                    html += '<img src="assets/foods/' + topic + '.jpg" class="sliderImage">'
+                    html += '</div>'
                     html += '<span>' + topic_human_readable + ': </span>'
                     html += '<span id="' + topic + '-value"></span>'
-                    html += '<img src="assets/foods/' + topic + '.jpg" class="sliderImage">'
                     html += '<input oninput=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
                     html += ' onload=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
                     html += ' type="range" min="1" max="100" value="100" id="' + topic + '-slider"'
