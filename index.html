@@ -81,6 +81,7 @@
             // Written by https://www.caveofprogramming.com/javascript-tutorial/javascript-html-generating-html-and-embedding-javascript-in-html.html
             function createTable(data) {
                 var html = "";
+                html += '<div id="removableData">';
                 html += '<table class="data">';
                 for (var rowIndex in data) {
                     if (rowIndex == 0) {
@@ -128,6 +129,7 @@
                     html += "</tr>"
                 }
                 html += "</ table>";
+                html += '</div>';
 
                 return html;
             }
@@ -145,11 +147,27 @@
             }
 
             function generateTables() {
-                stringName = "tabledata"
+                stringName = "tabledata";
                 html = "";
                 insertHTMLTable(stringName, html);
                 button = document.getElementById("showDataButton");
                 button.parentNode.removeChild(button)
+
+                // Insert toggle
+                insertHTMLDataButton("dataButtonContainer", "", false);
+            }
+
+            function removeTables() {
+                stringName = "tabledata";
+                tables = document.getElementById(stringName)
+                data_content = document.getElementById("removableData")
+                tables.removeChild(data_content)
+
+                button = document.getElementById("hideDataButton");
+                button.parentNode.removeChild(button)
+
+                // Insert toggle
+                insertHTMLDataButton("dataButtonContainer", "", true);
             }
 
             function updateSliderValue(element_id, value_id) {
@@ -203,12 +221,16 @@
                 element.innerHTML = html;
             }
 
-            function insertHTMLDataButton(id, html) {
+            function insertHTMLDataButton(id, html, is_show_button=true) {
                 var element = document.getElementById(id);
                 if(!element) {
                     console.log("Element with id " + id + " not found.");
                 }
-                html += "<span onClick=generateTables() id='showDataButton'>Show me the Chefs' scores!</span>"
+                if ( is_show_button == true ) {
+                    html += "<span onClick=generateTables() id='showDataButton' class='toggle'>Show me the Chefs' scores!</span>"
+                } else {
+                    html += "<span onClick=removeTables() id='hideDataButton' class='toggle'>Remove the Chefs' scores!</span>"
+                }
                 element.innerHTML = html;
             }
 
@@ -219,7 +241,9 @@
                 button = document.getElementById("quizStartButton");
                 button.parentNode.removeChild(button);
                 insertHTMLResultsButton("resultsButtonContainer", "");
-                insertHTMLDataButton("dataButtonContainer", "");
+
+                // Insert toggle
+                insertHTMLDataButton("dataButtonContainer", "", true);
             }
 
             function calculateDifference(value, key, map) {
@@ -336,6 +360,8 @@
             </div>
             <div id="tabledata">
             </div>
+        </div>
+        <div>
             <a href="https://www.bonappetit.com/" target="_blank">
                 Bon Appétit Home
             </a>

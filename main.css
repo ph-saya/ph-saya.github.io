@@ -30,7 +30,7 @@ button {
     font-size: 16px;
 }
 
-#showDataButton {
+.toggle {
     background-color: #fff;
     color: blue;
     text-decoration: underline;
