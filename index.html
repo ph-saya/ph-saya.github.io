@@ -101,9 +101,34 @@
                         html += colData;
                         html += "</td>";
                     }
-                    html += "</ tr>";
+                    html += "</tr>";
+                }
+                html += "</table>";
+
+                html += '<table class="images">';
+                for (var rowIndex in data) {
+                    html += "<tr>"
+                    if (rowIndex === 0) { continue; }
+                    // The 0th element is the name of the chef
+                    chef_name = data[rowIndex][0]
+                    html += "<td>";
+                    html += capitalize(chef_name);
+                    html += "</td>";
+                    html += "<td>";
+                    html += "<img src='assets/people/"
+                    html += chef_name
+                    if ( chef_name == 'felix' ) {
+                        html += ".png' alt=''"
+                    }
+                    else {
+                        html += ".jpeg' alt=''"
+                    }
+                    html += ">"
+                    html += "</td>";
+                    html += "</tr>"
                 }
                 html += "</ table>";
+
                 return html;
             }
 
