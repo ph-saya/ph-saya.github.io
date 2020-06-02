@@ -170,12 +170,21 @@
                 element.innerHTML = html;
             }
 
-            function insertHTMLButton(id, html) {
+            function insertHTMLResultsButton(id, html) {
                 var element = document.getElementById(id);
                 if(!element) {
                     console.log("Element with id " + id + " not found.");
                 }
                 html += "<button onClick=generateResults() id='quizEndButton'>Results</ button>"
+                element.innerHTML = html;
+            }
+
+            function insertHTMLDataButton(id, html) {
+                var element = document.getElementById(id);
+                if(!element) {
+                    console.log("Element with id " + id + " not found.");
+                }
+                html += "<span onClick=generateTables() id='showDataButton'>Show me the Chefs' scores!</span>"
                 element.innerHTML = html;
             }
 
@@ -185,7 +194,8 @@
                 insertHTMLSliders(stringName, html);
                 button = document.getElementById("quizStartButton");
                 button.parentNode.removeChild(button);
-                insertHTMLButton("resultsButtonContainer", "");
+                insertHTMLResultsButton("resultsButtonContainer", "");
+                insertHTMLDataButton("dataButtonContainer", "");
             }
 
             function calculateDifference(value, key, map) {
@@ -297,7 +307,8 @@
             </p>
         </div>
         <div>
-            <span onClick=generateTables() id="showDataButton">Show me the Chefs' scores!</span>
+            <div id="dataButtonContainer">
+            </div>
             <div id="tabledata">
             </div>
             <a href="https://www.bonappetit.com/" target="_blank">
