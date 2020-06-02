@@ -90,11 +90,11 @@
                         var colData = rowData[colIndex];
                         html += "<td>";
                         html += colData;
-                        html += "</td>";
+                        html += "</ td>";
                     }
-                    html += "</tr>";
+                    html += "</ tr>";
                 }
-                html += "</table>";
+                html += "</ table>";
                 return html;
             }
 
@@ -144,15 +144,15 @@
                     var topic_human_readable = categories_quiz_human_readable[colIndex]
 
                     html += '<div class="sliderContainer">'
-                    html += '<span>' + topic_human_readable + ': </span>'
-                    html += '<span id="' + topic + '-value"></span>'
+                    html += '<span>' + topic_human_readable + ': </ span>'
+                    html += '<span id="' + topic + '-value"></ span>'
                     html += '<img src="assets/foods/' + topic + '.jpg" class="sliderImage">'
                     html += '<input oninput=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
                     html += ' onload=updateSliderValue("' + topic + '-slider","' + topic + '-value") '
                     html += ' type="range" min="1" max="100" value="100" id="' + topic + '-slider"'
-                    html += 'class="slider"\></div>'
+                    html += 'class="slider"\></ div>'
                 }
-                html += '</div>'
+                html += '</ div>'
                 return html;
             }
 
@@ -170,7 +170,7 @@
                 if(!element) {
                     console.log("Element with id " + id + " not found.");
                 }
-                html += "<button onClick=generateResults() id='quizEndButton'>Results</button>"
+                html += "<button onClick=generateResults() id='quizEndButton'>Results</ button>"
                 element.innerHTML = html;
             }
 
@@ -217,7 +217,7 @@
                 html += "<p>You are such a "
                 chef_name = evaluateScores()
                 html += chef_name.toUpperCase()
-                html += "!</p>"
+                html += "!</ p>"
                 return html
             }
 
