@@ -249,13 +249,15 @@
                 element.innerHTML = html;
             }
 
-            function insertHTMLImage() {
-                stringName = "imageContainer"
-                var element = document.getElementById(stringName)
+            function insertHTMLImage(id, chef_name) {
+                var element = document.getElementById(id)
                 if(!element) {
-                    console.log("Element with id " + stringName + " not found.");
+                    console.log("Element with id " + id + " not found.");
                 }
-                chef_name = evaluateScores()
+                if (!chef_name) {
+                    chef_name = evaluateScores()
+                    console.log(chef_name)
+                }
                 html = ""
                 html += "<img src='assets/people/"
                 html += chef_name
@@ -274,7 +276,7 @@
                 stringName = "results"
                 html = "";
                 insertHTMLResults(stringName, html);
-                insertHTMLImage()
+                insertHTMLImage(id='imageContainer')
             }
 
             function welcomeBanner() {
