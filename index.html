@@ -454,19 +454,36 @@
       console.log(now);
       window.onload = welcomeBanner();
 
-      const searchForm = document.getElementById("search-form");
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchForm = document.getElementById("search-form");
+        searchForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
 
-      searchForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form submission
+          const searchInput = document.getElementById("search-input");
+          const searchTerm = searchInput.value;
 
-        const searchInput = document.getElementById("search-input");
-        const searchTerm = searchInput.value;
+          // Perform your search logic here
+          const actorName = searchTerm; // Replace with the searched person's name
+          const url = "https://moviesdatabase.p.rapidapi.com/actors";
+          const options = {
+            method: "GET",
+            headers: {
+              "X-RapidAPI-Key": xrapidapikey,
+              "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+            },
+          };
+          try {
+            fetch(url, options)
+              .then((response) => response.json())
+              .then((data) => {
+                alert("Response was: " + data.results[0].primaryName);
+              });
+          } catch (error) {
+            console.error(error);
+          }
 
-        alert("Search query: " + searchTerm);
-
-        // Perform your search logic here
-
-        searchInput.value = ""; // Clear the input field
+          searchInput.value = ""; // Clear the input field
+        });
       });
     </script>
   </head>
