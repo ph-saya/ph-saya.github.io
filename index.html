@@ -332,11 +332,31 @@
             now = Date()
             console.log(now)
             window.onload = welcomeBanner();
-        </script>
 
+            const searchForm = document.getElementById('search-form');
+
+            searchForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                const searchInput = document.getElementById('search-input');
+                const searchTerm = searchInput.value;
+
+                alert('Search query: ' + searchTerm);
+
+                // Perform your search logic here
+
+                searchInput.value = ''; // Clear the input field
+            });
+        </script>
     </head>
 
     <body>
 	    Test
+
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+
     </body>
 </html>
